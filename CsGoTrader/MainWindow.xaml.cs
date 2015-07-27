@@ -24,5 +24,11 @@ namespace CsGoTrader
         {
             InitializeComponent();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Skin skin = new Skin("Aquamarine Revenge");
+            //SteamMarket.getPrices();
+        }
     }
 }

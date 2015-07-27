@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace CsGoTrader
 {
@@ -6,6 +7,15 @@ namespace CsGoTrader
     {
         public List<Skin> skins;
 
-        public averagePricePerQuality()
+        public double averageLowestPricePerQuality(Quality quality, int offersNumber)
+        {
+            double lowestPrice = double.MaxValue;
+            foreach (var skin in skins)
+            {
+                lowestPrice = Math.Min(lowestPrice, skin.averagePrice(quality, offersNumber));
+            }
+
+            return lowestPrice;
+        }
     }
 }
