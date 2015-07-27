@@ -7,6 +7,8 @@ namespace CsGoTrader
     {
         public List<Skin> skins;
 
+        public CollectionGrade grade;
+
         public double averageLowestPricePerQuality(Quality quality, int offersNumber)
         {
             double lowestPrice = double.MaxValue;

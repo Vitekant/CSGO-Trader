@@ -30,5 +30,10 @@ namespace CsGoTrader
             Skin skin = new Skin("Aquamarine Revenge");
             //SteamMarket.getPrices();
         }
+
+        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
