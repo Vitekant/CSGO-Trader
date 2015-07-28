@@ -76,5 +76,12 @@ namespace CsGoTrader
             Console.Write("{0}", report);
             context.ClearModel();
         }
+
+        public static TradeUpContract findBestContract(List<Skin> higherTier, List<Skin> lowerTier)
+        {
+
+
+            return null;
+        }
     }
 }
