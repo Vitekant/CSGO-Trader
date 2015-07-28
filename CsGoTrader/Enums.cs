@@ -1,4 +1,8 @@
-﻿public enum Quality
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System.Runtime.Serialization;
+
+public enum Quality
 {
     BattleScared = 1,
     WellWorn = 2,
@@ -7,6 +11,7 @@
     FactoryNew = 5,
 }
 
+[JsonConverter(typeof(StringEnumConverter))]
 public enum CollectionGrade
 {
     ConsumerGrade = 1,

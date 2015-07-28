@@ -58,8 +58,10 @@ namespace CsGoTrader
             directive.Arithmetic = Arithmetic.Exact;
             Solution solution = context.Solve(directive);
             Report report = solution.GetReport();
-            //Console.WriteLine("x1: {0}, x: {1}", x1, x2);
-            Console.Write("{0}", report);
+            Console.WriteLine("x1: {0}, x: {1}", x1, x2, x3);
+            Console.WriteLine("Gain: {0}", goal);
+
+            //Console.Write("{0}", report);
             context.ClearModel();
         }
     }

@@ -5,117 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CsGoTrader"
         mc:Ignorable="d"
-        Title="MainWindow" Height="846.079" Width="571.314">
+        Title="MainWindow" Height="846.079" Width="781.314">
     <Grid>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="34" Margin="10,10,0,0" VerticalAlignment="Top" Width="86" Click="button_Click"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="18" Margin="22,65,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="86"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="18" Margin="174,65,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="18" Margin="27,211,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="86"/>
-        <TextBox x:Name="textBox1_Copy4" HorizontalAlignment="Left" Height="18" Margin="118,211,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy5" HorizontalAlignment="Left" Height="18" Margin="179,211,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy6" HorizontalAlignment="Left" Height="18" Margin="240,211,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy7" HorizontalAlignment="Left" Height="18" Margin="301,211,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56" RenderTransformOrigin="2.817,0.228"/>
-        <TextBox x:Name="textBox1_Copy8" HorizontalAlignment="Left" Height="18" Margin="362,211,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="18" Margin="27,234,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="86"/>
-        <TextBox x:Name="textBox1_Copy9" HorizontalAlignment="Left" Height="18" Margin="118,234,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy10" HorizontalAlignment="Left" Height="18" Margin="179,234,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy11" HorizontalAlignment="Left" Height="18" Margin="240,234,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy12" HorizontalAlignment="Left" Height="18" Margin="301,234,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56" RenderTransformOrigin="2.817,0.228"/>
-        <TextBox x:Name="textBox1_Copy13" HorizontalAlignment="Left" Height="18" Margin="362,234,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="18" Margin="27,257,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="86"/>
-        <TextBox x:Name="textBox1_Copy14" HorizontalAlignment="Left" Height="18" Margin="118,257,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy15" HorizontalAlignment="Left" Height="18" Margin="179,257,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy16" HorizontalAlignment="Left" Height="18" Margin="240,257,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy17" HorizontalAlignment="Left" Height="18" Margin="301,257,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56" RenderTransformOrigin="2.817,0.228"/>
-        <TextBox x:Name="textBox1_Copy18" HorizontalAlignment="Left" Height="18" Margin="362,257,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox_Copy3" HorizontalAlignment="Left" Height="18" Margin="27,280,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="86"/>
-        <TextBox x:Name="textBox1_Copy19" HorizontalAlignment="Left" Height="18" Margin="118,280,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy20" HorizontalAlignment="Left" Height="18" Margin="179,280,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy21" HorizontalAlignment="Left" Height="18" Margin="240,280,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy22" HorizontalAlignment="Left" Height="18" Margin="301,280,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56" RenderTransformOrigin="2.817,0.228"/>
-        <TextBox x:Name="textBox1_Copy23" HorizontalAlignment="Left" Height="18" Margin="362,280,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox_Copy4" HorizontalAlignment="Left" Height="18" Margin="27,303,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="86"/>
-        <TextBox x:Name="textBox1_Copy24" HorizontalAlignment="Left" Height="18" Margin="118,303,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy25" HorizontalAlignment="Left" Height="18" Margin="179,303,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy26" HorizontalAlignment="Left" Height="18" Margin="240,303,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy27" HorizontalAlignment="Left" Height="18" Margin="301,303,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56" RenderTransformOrigin="2.817,0.228"/>
-        <TextBox x:Name="textBox1_Copy28" HorizontalAlignment="Left" Height="18" Margin="362,303,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox_Copy5" HorizontalAlignment="Left" Height="18" Margin="22,88,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="86"/>
-        <TextBox x:Name="textBox1_Copy29" HorizontalAlignment="Left" Height="18" Margin="174,88,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox_Copy6" HorizontalAlignment="Left" Height="18" Margin="22,111,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="86"/>
-        <TextBox x:Name="textBox1_Copy34" HorizontalAlignment="Left" Height="18" Margin="174,111,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox_Copy7" HorizontalAlignment="Left" Height="18" Margin="22,134,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="86"/>
-        <TextBox x:Name="textBox1_Copy39" HorizontalAlignment="Left" Height="18" Margin="174,134,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox_Copy8" HorizontalAlignment="Left" Height="18" Margin="22,157,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="86"/>
-        <TextBox x:Name="textBox1_Copy44" HorizontalAlignment="Left" Height="18" Margin="174,157,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox_Copy9" HorizontalAlignment="Left" Height="18" Margin="27,360,0,-57" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="86"/>
-        <TextBox x:Name="textBox1_Copy49" HorizontalAlignment="Left" Height="18" Margin="118,360,0,-57" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy50" HorizontalAlignment="Left" Height="18" Margin="179,360,0,-57" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy51" HorizontalAlignment="Left" Height="18" Margin="240,360,0,-57" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy52" HorizontalAlignment="Left" Height="18" Margin="301,360,0,-57" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56" RenderTransformOrigin="2.817,0.228"/>
-        <TextBox x:Name="textBox1_Copy53" HorizontalAlignment="Left" Height="18" Margin="362,360,0,-57" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox_Copy10" HorizontalAlignment="Left" Height="18" Margin="27,383,0,-80" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="86"/>
-        <TextBox x:Name="textBox1_Copy54" HorizontalAlignment="Left" Height="18" Margin="118,383,0,-80" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy55" HorizontalAlignment="Left" Height="18" Margin="179,383,0,-80" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy56" HorizontalAlignment="Left" Height="18" Margin="240,383,0,-80" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy57" HorizontalAlignment="Left" Height="18" Margin="301,383,0,-80" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56" RenderTransformOrigin="2.817,0.228"/>
-        <TextBox x:Name="textBox1_Copy58" HorizontalAlignment="Left" Height="18" Margin="362,383,0,-80" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox_Copy11" HorizontalAlignment="Left" Height="18" Margin="27,406,0,-103" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="86"/>
-        <TextBox x:Name="textBox1_Copy59" HorizontalAlignment="Left" Height="18" Margin="118,406,0,-103" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy60" HorizontalAlignment="Left" Height="18" Margin="179,406,0,-103" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy61" HorizontalAlignment="Left" Height="18" Margin="240,406,0,-103" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy62" HorizontalAlignment="Left" Height="18" Margin="301,406,0,-103" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56" RenderTransformOrigin="2.817,0.228"/>
-        <TextBox x:Name="textBox1_Copy63" HorizontalAlignment="Left" Height="18" Margin="362,406,0,-103" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox_Copy12" HorizontalAlignment="Left" Height="18" Margin="27,429,0,-126" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="86"/>
-        <TextBox x:Name="textBox1_Copy64" HorizontalAlignment="Left" Height="18" Margin="118,429,0,-126" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy65" HorizontalAlignment="Left" Height="18" Margin="179,429,0,-126" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy66" HorizontalAlignment="Left" Height="18" Margin="240,429,0,-126" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy67" HorizontalAlignment="Left" Height="18" Margin="301,429,0,-126" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56" RenderTransformOrigin="2.817,0.228"/>
-        <TextBox x:Name="textBox1_Copy68" HorizontalAlignment="Left" Height="18" Margin="362,429,0,-126" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox_Copy13" HorizontalAlignment="Left" Height="18" Margin="27,452,0,-149" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="86"/>
-        <TextBox x:Name="textBox1_Copy69" HorizontalAlignment="Left" Height="18" Margin="118,452,0,-149" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy70" HorizontalAlignment="Left" Height="18" Margin="179,452,0,-149" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy71" HorizontalAlignment="Left" Height="18" Margin="240,452,0,-149" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy72" HorizontalAlignment="Left" Height="18" Margin="301,452,0,-149" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56" RenderTransformOrigin="2.817,0.228"/>
-        <TextBox x:Name="textBox1_Copy73" HorizontalAlignment="Left" Height="18" Margin="362,452,0,-149" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox_Copy14" HorizontalAlignment="Left" Height="18" Margin="27,514,0,-211" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="86"/>
-        <TextBox x:Name="textBox1_Copy74" HorizontalAlignment="Left" Height="18" Margin="118,514,0,-211" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy75" HorizontalAlignment="Left" Height="18" Margin="179,514,0,-211" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy76" HorizontalAlignment="Left" Height="18" Margin="240,514,0,-211" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy77" HorizontalAlignment="Left" Height="18" Margin="301,514,0,-211" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56" RenderTransformOrigin="2.817,0.228"/>
-        <TextBox x:Name="textBox1_Copy78" HorizontalAlignment="Left" Height="18" Margin="362,514,0,-211" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox_Copy15" HorizontalAlignment="Left" Height="18" Margin="27,537,0,-234" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="86"/>
-        <TextBox x:Name="textBox1_Copy79" HorizontalAlignment="Left" Height="18" Margin="118,537,0,-234" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy80" HorizontalAlignment="Left" Height="18" Margin="179,537,0,-234" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy81" HorizontalAlignment="Left" Height="18" Margin="240,537,0,-234" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy82" HorizontalAlignment="Left" Height="18" Margin="301,537,0,-234" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56" RenderTransformOrigin="2.817,0.228"/>
-        <TextBox x:Name="textBox1_Copy83" HorizontalAlignment="Left" Height="18" Margin="362,537,0,-234" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox_Copy16" HorizontalAlignment="Left" Height="18" Margin="27,560,0,-257" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="86"/>
-        <TextBox x:Name="textBox1_Copy84" HorizontalAlignment="Left" Height="18" Margin="118,560,0,-257" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy85" HorizontalAlignment="Left" Height="18" Margin="179,560,0,-257" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy86" HorizontalAlignment="Left" Height="18" Margin="240,560,0,-257" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy87" HorizontalAlignment="Left" Height="18" Margin="301,560,0,-257" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56" RenderTransformOrigin="2.817,0.228"/>
-        <TextBox x:Name="textBox1_Copy88" HorizontalAlignment="Left" Height="18" Margin="362,560,0,-257" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox_Copy17" HorizontalAlignment="Left" Height="18" Margin="27,583,0,-280" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="86"/>
-        <TextBox x:Name="textBox1_Copy89" HorizontalAlignment="Left" Height="18" Margin="118,583,0,-280" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy90" HorizontalAlignment="Left" Height="18" Margin="179,583,0,-280" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy91" HorizontalAlignment="Left" Height="18" Margin="240,583,0,-280" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy92" HorizontalAlignment="Left" Height="18" Margin="301,583,0,-280" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56" RenderTransformOrigin="2.817,0.228"/>
-        <TextBox x:Name="textBox1_Copy93" HorizontalAlignment="Left" Height="18" Margin="362,583,0,-280" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox_Copy18" HorizontalAlignment="Left" Height="18" Margin="27,606,0,-303" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="86"/>
-        <TextBox x:Name="textBox1_Copy94" HorizontalAlignment="Left" Height="18" Margin="118,606,0,-303" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy95" HorizontalAlignment="Left" Height="18" Margin="179,606,0,-303" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy96" HorizontalAlignment="Left" Height="18" Margin="240,606,0,-303" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy97" HorizontalAlignment="Left" Height="18" Margin="301,606,0,-303" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56" RenderTransformOrigin="2.817,0.228"/>
-        <TextBox x:Name="textBox1_Copy98" HorizontalAlignment="Left" Height="18" Margin="362,606,0,-303" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <Label x:Name="label" Content="MAX" HorizontalAlignment="Left" Height="28" Margin="174,37,0,0" VerticalAlignment="Top" Width="52"/>
-        <TextBox x:Name="textBox1_Copy99" HorizontalAlignment="Left" Height="18" Margin="113,65,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy100" HorizontalAlignment="Left" Height="18" Margin="113,88,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy101" HorizontalAlignment="Left" Height="18" Margin="113,111,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy102" HorizontalAlignment="Left" Height="18" Margin="113,134,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="textBox1_Copy103" HorizontalAlignment="Left" Height="18" Margin="113,157,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
-        <Label x:Name="label_Copy" Content="MIN" HorizontalAlignment="Left" Height="28" Margin="113,37,0,0" VerticalAlignment="Top" Width="56"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="18" Margin="240,65,0,0" VerticalAlignment="Top" Width="87" SelectionChanged="comboBox_SelectionChanged"/>
+        <Button x:Name="button" Content="Calculate" HorizontalAlignment="Left" Height="20" Margin="517,24,0,0" VerticalAlignment="Top" Width="86" Click="button_Click"/>
+        <Label x:Name="label_Copy1" Content="Skin Name" HorizontalAlignment="Left" Height="28" Margin="27,73,0,0" VerticalAlignment="Top" Width="86"/>
+        <Label x:Name="label" Content="MAX" HorizontalAlignment="Left" Height="28" Margin="311,73,0,0" VerticalAlignment="Top" Width="35"/>
+        <Label x:Name="label_Copy" Content="MIN" HorizontalAlignment="Left" Height="28" Margin="271,73,0,0" VerticalAlignment="Top" Width="35"/>
 
+        <TextBox x:Name="SkinName1" HorizontalAlignment="Left" Height="18" Margin="27,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239" Text="AK-47 | Aquamarine Revenge"/>
+        <TextBox x:Name="MinFloatValue1" HorizontalAlignment="Left" Height="18" Margin="271,100,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="35"/>
+        <TextBox x:Name="MaxFloatValue1" HorizontalAlignment="Left" Height="18" Margin="311,100,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="35"/>
+        <ComboBox x:Name="CollectionGradeComboBox1" HorizontalAlignment="Left" Height="18" Margin="351,100,0,0" VerticalAlignment="Top" Width="125" SelectionChanged="comboBox_SelectionChanged" FontSize="9.333">
+            <ComboBoxItem Content="ConsumerGrade"/>
+            <ComboBoxItem Content="IndustrialGrade"/>
+            <ComboBoxItem Content="MilSpec"/>
+            <ComboBoxItem Content="Restricted"/>
+            <ComboBoxItem Content="Classified"/>
+            <ComboBoxItem Content="Covert" IsSelected="True"/>
+        </ComboBox>
+        <ListBox x:Name="CollectionsBox" HorizontalAlignment="Left" Height="179" Margin="517,100,0,0" VerticalAlignment="Top" Width="208"/>
+        <Button x:Name="button1" Content="+" HorizontalAlignment="Left" Height="18" Margin="488,100,0,0" VerticalAlignment="Top" Width="18"/>
+        <TextBox x:Name="CollectionName" HorizontalAlignment="Left" Height="19" Margin="125,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221" Text="Falchion"/>
+        <Label x:Name="label1" Content="Collection name:" HorizontalAlignment="Left" Height="24" Margin="27,45,0,0" VerticalAlignment="Top" Width="105"/>
+        <Button x:Name="SaveCollectionButton" Content="Save Collection" HorizontalAlignment="Left" Height="24" Margin="351,46,0,0" VerticalAlignment="Top" Width="125" Click="SaveCollectionButton_Click"/>
+        <Label x:Name="SkinGradeLabel" Content="Grade" HorizontalAlignment="Left" Height="28" Margin="351,73,0,0" VerticalAlignment="Top" Width="86" RenderTransformOrigin="4.058,0.381"/>
+        <Label x:Name="CollectionsLabel" Content="Collections:" HorizontalAlignment="Left" Height="24" Margin="517,71,0,0" VerticalAlignment="Top" Width="140"/>
+        <Button x:Name="SaveButton" Content="Save to File" HorizontalAlignment="Left" Height="20" Margin="639,24,0,0" VerticalAlignment="Top" Width="86" Click="SaveButton_Click"/>
+        <Button x:Name="LoadButton" Content="Load from File" HorizontalAlignment="Left" Height="20" Margin="639,49,0,0" VerticalAlignment="Top" Width="86" Click="LoadButton_Click"/>
     </Grid>
 </Window>

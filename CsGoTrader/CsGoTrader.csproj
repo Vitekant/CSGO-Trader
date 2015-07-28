@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>CsGoTrader.OptimizationEngine</StartupObject>
+    <StartupObject>CsGoTrader.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -43,7 +43,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Solver.Foundation">
-      <HintPath>..\Lib\Microsoft.Solver.Foundation.dll.dll</HintPath>
+      <HintPath>..\Lib\Microsoft.Solver.Foundation.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />

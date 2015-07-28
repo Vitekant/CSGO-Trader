@@ -12,7 +12,7 @@ namespace CsGoTrader
         {
             return getPrices(
                 string.Format(
-                    @"http://steamcommunity.com/market/listings/730/AK-47%20%7C%20{0}%20%28{1}%29/render?currency=1",
+                    @"http://steamcommunity.com/market/listings/730/{0}%20%28{1}%29/render?currency=1",
                     skinName,
                     EnumUtil.qualityToString(quality)));
         }
