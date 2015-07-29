@@ -24,6 +24,8 @@ namespace CsGoTrader
     {
         private Dictionary<string, Collection> collections;
 
+        private List<Tuple<TextBox, TextBox, TextBox, ComboBox>> skinsControlsList;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -34,6 +36,10 @@ namespace CsGoTrader
         private void InitializeProgram()
         {
             collections = new Dictionary<string, Collection>();
+            skinsControlsList = new List<Tuple<TextBox, TextBox, TextBox, ComboBox>>()
+            {
+                new Tuple<TextBox, TextBox, TextBox, ComboBox>(SkinName1, MinFloatValue1, MaxFloatValue1, CollectionGradeComboBox1)
+            };
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -49,11 +55,7 @@ namespace CsGoTrader
 
         private void SaveCollectionButton_Click(object sender, RoutedEventArgs e)
         {
-            var controlsList = new List<Tuple<TextBox, TextBox, TextBox, ComboBox>>();
-            var row = new Tuple<TextBox, TextBox, TextBox, ComboBox>(SkinName1, MinFloatValue1, MaxFloatValue1, CollectionGradeComboBox1);
-            controlsList.Add(row);
-
-            var collection = Collection.readCollection(CollectionName.Text, controlsList);
+            var collection = Collection.readCollection(CollectionName.Text, skinsControlsList);
             if (collections.ContainsKey(collection.name))
             {
                 collections.Add(collection.name, collection);
@@ -94,7 +96,7 @@ namespace CsGoTrader
                     var collectionsList = (List<Collection>)serializer.Deserialize(file, typeof(List<Collection>));
                     foreach (var collection in collectionsList)
                     {
-                        if (collections.ContainsKey(collection.name))
+                        if (!collections.ContainsKey(collection.name))
                         {
                             collections.Add(collection.name, collection);
                         }
@@ -117,6 +119,77 @@ namespace CsGoTrader
                 var item = new ListBoxItem();
                 item.Content = collection.Key;
                 CollectionsBox.Items.Add(item);
+            }
+        }
+
+        private void AddRowButtonClick(object sender, RoutedEventArgs e)
+        {
+            var rowNumber = SkinsGrid.RowDefinitions.Count;
+
+            if(rowNumber > 16){
+                return;
+            }
+
+            var row = new RowDefinition();
+            row.Height = new GridLength(30, GridUnitType.Pixel);
+            SkinsGrid.RowDefinitions.Add(row);
+
+            var nameBox = new TextBox();
+            nameBox.Height = 20;
+            nameBox.Width = 240;
+            nameBox.Margin = new Thickness(10, 5, 0, 0);
+            nameBox.VerticalAlignment = VerticalAlignment.Top;
+            nameBox.HorizontalAlignment = HorizontalAlignment.Left;
+
+            var minFloatValueBox = new TextBox();
+            minFloatValueBox.Height = 20;
+            minFloatValueBox.Width = 30;
+            minFloatValueBox.Margin = new Thickness(5, 5, 5, 0);
+            minFloatValueBox.VerticalAlignment = VerticalAlignment.Top;
+            minFloatValueBox.HorizontalAlignment = HorizontalAlignment.Left;
+
+            var maxFloatValueBox = new TextBox();
+            maxFloatValueBox.Height = 20;
+            maxFloatValueBox.Width = 30;
+            maxFloatValueBox.Margin = new Thickness(5, 5, 5, 0);
+            maxFloatValueBox.VerticalAlignment = VerticalAlignment.Top;
+            maxFloatValueBox.HorizontalAlignment = HorizontalAlignment.Left;
+
+            var gradeComboBox = new ComboBox();
+            gradeComboBox.Height = 20;
+            gradeComboBox.Width = 120;
+            gradeComboBox.Margin = new Thickness(5, 5, 0, 0);
+            gradeComboBox.VerticalAlignment = VerticalAlignment.Top;
+            gradeComboBox.HorizontalAlignment = HorizontalAlignment.Left;
+            fillGadeBox(gradeComboBox);
+
+            SkinsGrid.Children.Add(nameBox);
+            Grid.SetRow(nameBox, rowNumber);
+            Grid.SetColumn(nameBox, 0);
+
+            SkinsGrid.Children.Add(minFloatValueBox);
+            Grid.SetRow(minFloatValueBox, rowNumber);
+            Grid.SetColumn(minFloatValueBox, 1);
+
+            SkinsGrid.Children.Add(maxFloatValueBox);
+            Grid.SetRow(maxFloatValueBox, rowNumber);
+            Grid.SetColumn(maxFloatValueBox, 2);
+
+            SkinsGrid.Children.Add(gradeComboBox);
+            Grid.SetRow(gradeComboBox, rowNumber);
+            Grid.SetColumn(gradeComboBox, 3);
+
+            skinsControlsList.Add(new Tuple<TextBox, TextBox, TextBox, ComboBox>(nameBox, minFloatValueBox, maxFloatValueBox, gradeComboBox));
+
+        }
+
+        private void fillGadeBox(ComboBox gradeComboBox)
+        {
+            gradeComboBox.FontSize = 9;
+
+            foreach (CollectionGrade quality in Enum.GetValues(typeof(CollectionGrade)))
+            {
+                gradeComboBox.Items.Add(new ComboBoxItem() { Content = quality.ToString() });
             }
         }
     }
