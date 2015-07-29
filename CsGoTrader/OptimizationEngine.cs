@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.SolverFoundation.Common;
 using Microsoft.SolverFoundation.Solvers;
 using Microsoft.SolverFoundation.Services;
+using System.Text.RegularExpressions;
 
 namespace CsGoTrader
 {
@@ -61,7 +62,7 @@ namespace CsGoTrader
 
             //model.AddConstraint("Row2", x2 + z * 100 <= 100);
 
-            Goal goal = model.AddGoal("Goal0", GoalKind.Maximize, (t1fn * 120 + t1mw * 61 + t1ft * 34 + t2fn * 76 + t2mw * 61 + t2ft * 34) - (x1 * 9 + x2 * 8 + x3 * 5)*2);
+            Goal goal = model.AddGoal("Goal0", GoalKind.Maximize, (t1fn * 120 + t1mw * 61 + t1ft * 34 + t2fn * 76 + t2mw * 61 + t2ft * 34) - (x1 * 9 + x2 * 8 + x3 * 5) * 2);
 
             //Goal goal = model.AddGoal("Goal0", GoalKind.Maximize,
             //    "Max[x1-0.07,0] * 4 - x1");
@@ -82,6 +83,56 @@ namespace CsGoTrader
 
 
             return null;
+        }
+
+        public static string getVariableName(Skin skin, Quality quality)
+        {
+            var name = String.Copy(skin.name);
+            Regex.Replace(name, @"\s+", "");
+            Regex.Replace(name, @"|", "");
+            Regex.Replace(name, @"-", "");
+            return name + EnumUtil.getQualityShort(quality);
+        }
+
+        //public static string getGainString(List<Skin> targetSkins)
+        //{
+        //    var gainList = new List<string>();
+        //    foreach (var skin in targetSkins)
+        //    {
+        //        gainList.Add(getVariableName(skin))
+        //    }
+        //}
+
+        public static List<Tuple<Decision, Skin, Quality>> getDecisions(List<Skin> skins, int limit)
+        {
+            var decisionsList = new List<Tuple<Decision, Skin, Quality>>();
+            foreach(Skin skin in skins)
+            {
+                foreach (Quality quality in Enum.GetValues(typeof(Quality)))
+                {
+                    var decision = new Decision(Domain.IntegerRange(0, limit), getVariableName(skin, quality));
+                    decisionsList.Add(new Tuple<Decision, Skin, Quality>(decision, skin, quality));
+                }
+            }
+
+            return decisionsList;
+        }
+
+        public static string getBasicConstraints(List<Skin> skins, int limit)
+        {
+            var constraintsList = new List<string>();
+            foreach (Skin skin in skins)
+            {
+                foreach (Quality quality in Enum.GetValues(typeof(Quality)))
+                {
+                    constraintsList.Add(getVariableName(skin, quality));
+                }
+            }
+
+            string left = String.Join("+ ", constraintsList.ToArray());
+            left = left + " == " + limit;
+
+            return left;
         }
     }
 }

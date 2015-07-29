@@ -26,5 +26,24 @@ namespace CsGoTrader
                     throw new Exception("Unsupported quality");
             }
         }
+
+        internal static string getQualityShort(Quality quality)
+        {
+            switch (quality)
+            {
+                case Quality.BattleScared:
+                    return "BS";
+                case Quality.WellWorn:
+                    return "WW";
+                case Quality.FieldTested:
+                    return "FT";
+                case Quality.MinimalWear:
+                    return "MW";
+                case Quality.FactoryNew:
+                    return "FN";
+                default:
+                    throw new Exception("Unsupported quality");
+            }
+        }
     }
 }
