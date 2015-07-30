@@ -12,7 +12,7 @@ namespace CsGoTrader
     public class Collection
     {
         [JsonProperty]
-        private List<Skin> jsonSkins;
+        public List<Skin> jsonSkins;
 
         private Dictionary<CollectionGrade, CollectionGradeSkins> skins;
         [JsonProperty]

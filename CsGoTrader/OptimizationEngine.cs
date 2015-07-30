@@ -14,7 +14,15 @@ namespace CsGoTrader
     {
         static void Main(string[] args)
         {
-            Sample1();
+            //Sample1();
+        }
+
+        public static TradeUpContract checkCollection(Collection collection)
+        {
+            return findBestContract(
+                collection.jsonSkins.Where(s => s.collectionGrade == CollectionGrade.Covert).ToList(),
+                collection.jsonSkins.Where(s => s.collectionGrade == CollectionGrade.Classified).ToList());
+            //return null;
         }
 
         static void Sample1()
@@ -80,17 +88,130 @@ namespace CsGoTrader
 
         public static TradeUpContract findBestContract(List<Skin> higherTier, List<Skin> lowerTier)
         {
+            SolverContext context = SolverContext.GetContext();
+            Model model = context.CreateModel();
+            var targets = getDecisions(higherTier, 1);
+            foreach(var decision in targets)
+            {
+                model.AddDecision(decision.Item1);
+            }
 
+            var decisions = getDecisions(lowerTier, 10);
+            foreach (var decision in decisions)
+            {
+                model.AddDecision(decision.Item1);
+            }
+
+            List<string> basicConstraints = new List<string>();
+            foreach (var target in higherTier)
+            {
+                basicConstraints.Add(getBasicConstraints(target, 1));
+            }
+
+            basicConstraints.Add(getBasicConstraints(lowerTier, 10));
+
+            int i = 0;
+            foreach(var constraint in basicConstraints)
+            {
+                model.AddConstraint("basicConstraint" + i, constraint);
+                i++;
+            }
+
+            List<string> complexConstraintsBase = getComplexConstraintsBase(lowerTier);
+
+            List<string> complexConstraints = new List<string>();
+            foreach(var target in targets)
+            {
+                var constraintTemplate = "{0} - 1 + (({1}) / 10) * {2} + {3} <= {4}";
+                complexConstraints.Add(
+                    string.Format(
+                        constraintTemplate,
+                        getVariableName(target.Item2, target.Item3),
+                        string.Join(" + ",complexConstraintsBase),
+                        target.Item2.getFloatValueRange(),
+                        target.Item2.minFloatValue,
+                        EnumUtil.getQualityBorder(target.Item3)));
+            }
+
+            i = 0;
+            foreach(var constraint in complexConstraints)
+            {
+                model.AddConstraint("ComplexConstraint"+i, constraint);
+                i++;
+            }
+
+            string goal = generateGoal(targets, decisions);
+
+            model.AddGoal("mainGoal", GoalKind.Maximize, goal);
+
+            SimplexDirective directive = new SimplexDirective();
+            directive.Arithmetic = Arithmetic.Exact;
+            Solution solution = context.Solve(directive);
+            Report report = solution.GetReport();
+            //Console.WriteLine("x1: {0}, x: {1}", x1, x2, x3);
+            //Console.WriteLine("Gain: {0}", goal);
+
+            Console.Write("{0}", report);
+            context.ClearModel();
 
             return null;
+        }
+
+        private static string generateGoal(List<Tuple<Decision, Skin, Quality>> targets, List<Tuple<Decision, Skin, Quality>> decisions)
+        {
+            string goalTemplate = "(({0}) - ({1}) * {2}) * 0.85";
+            string gain = generateGain(targets);
+            string expenses = generateCosts(decisions);
+
+            return string.Format(goalTemplate, gain, expenses, (targets.Count / 5));
+        }
+
+        private static string generateCosts(List<Tuple<Decision, Skin, Quality>> decisions)
+        {
+            List<string> expenses = new List<string>();
+            foreach (var decision in decisions)
+            {
+                expenses.Add(getVariableName(decision.Item2, decision.Item3) + " * " + decision.Item2.averagePrice(decision.Item3, 10));
+            }
+
+            return string.Join(" + ", expenses);
+        }
+
+        private static string generateGain(List<Tuple<Decision, Skin, Quality>> targets)
+        {
+            List<string> expenses = new List<string>();
+            foreach(var target in targets)
+            {
+                expenses.Add(getVariableName(target.Item2, target.Item3) + " * " + target.Item2.averagePrice(target.Item3, 1));
+            }
+
+            return string.Join(" + ", expenses);
+        }
+
+        private static List<string> getComplexConstraintsBase(List<Skin> lowerTier)
+        {
+            var complexConstraintsBase = new List<string>();
+
+            foreach (var component in lowerTier)
+            {
+                foreach (Quality quality in Enum.GetValues(typeof(Quality)))
+                {
+                    complexConstraintsBase.Add(getVariableName(component, quality) + " * " + component.getAverageFloatValue(quality));
+                }
+            }
+
+            return complexConstraintsBase;
         }
 
         public static string getVariableName(Skin skin, Quality quality)
         {
             var name = String.Copy(skin.name);
-            Regex.Replace(name, @"\s+", "");
-            Regex.Replace(name, @"|", "");
-            Regex.Replace(name, @"-", "");
+            var charsToRemove = new string[] { "|", "-", " ", "}", ",", ".", ";", "'" };
+            foreach (var c in charsToRemove)
+            {
+                name = name.Replace(c, string.Empty);
+            }
+
             return name + EnumUtil.getQualityShort(quality);
         }
 
@@ -133,6 +254,15 @@ namespace CsGoTrader
             left = left + " == " + limit;
 
             return left;
+        }
+
+        public static string getBasicConstraints(Skin skin, int limit)
+        {
+            var list = new List<Skin>()
+            {
+                skin
+            };
+            return getBasicConstraints(list, limit);
         }
     }
 }

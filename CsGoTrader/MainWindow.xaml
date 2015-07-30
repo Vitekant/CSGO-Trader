@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="666.079" Width="781.314">
     <Grid Height="635" VerticalAlignment="Top">
-        <Button x:Name="button" Content="Calculate" HorizontalAlignment="Left" Height="20" Margin="517,24,0,0" VerticalAlignment="Top" Width="86" Click="button_Click"/>
+        <Button x:Name="button" Content="CalculateButton" HorizontalAlignment="Left" Height="20" Margin="517,24,0,0" VerticalAlignment="Top" Width="86" Click="CalculateButton_Click"/>
         <Label x:Name="label_Copy1" Content="Skin Name" HorizontalAlignment="Left" Height="28" Margin="27,71,0,0" VerticalAlignment="Top" Width="86"/>
         <Label x:Name="label" Content="MAX" HorizontalAlignment="Left" Height="28" Margin="323,73,0,0" VerticalAlignment="Top" Width="35"/>
         <Label x:Name="label_Copy" Content="MIN" HorizontalAlignment="Left" Height="28" Margin="283,73,0,0" VerticalAlignment="Top" Width="35"/>
@@ -33,7 +33,7 @@
             </Grid.RowDefinitions>
             <TextBox Grid.Column="0" Grid.Row="0" x:Name="SkinName1" HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" Text="AK-47 | Aquamarine Revenge"/>
             <TextBox Grid.Column="1" Grid.Row="0" x:Name="MinFloatValue1" HorizontalAlignment="Left" Height="20" Margin="5,10,5,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="30" />
-            <TextBox Grid.Column="2" Grid.Row="0" x:Name="MaxFloatValue1" HorizontalAlignment="Left" Height="20" Margin="5,10,5,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="30" />
+            <TextBox Grid.Column="2" Grid.Row="0" x:Name="MaxFloatValue1" HorizontalAlignment="Left" Height="20" Margin="5,10,5,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="30" />
             <ComboBox Grid.Column="3" Grid.Row="0" x:Name="CollectionGradeComboBox1" HorizontalAlignment="Left" Height="20" Margin="5,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox_SelectionChanged" FontSize="9">
                 <ComboBoxItem Content="ConsumerGrade"/>
                 <ComboBoxItem Content="IndustrialGrade"/>

@@ -45,5 +45,24 @@ namespace CsGoTrader
                     throw new Exception("Unsupported quality");
             }
         }
+
+        internal static double getQualityBorder(Quality quality)
+        {
+            switch (quality)
+            {
+                case Quality.BattleScared:
+                    return 1;
+                case Quality.WellWorn:
+                    return 0.45;
+                case Quality.FieldTested:
+                    return 0.37;
+                case Quality.MinimalWear:
+                    return 0.15;
+                case Quality.FactoryNew:
+                    return 0.07;
+                default:
+                    throw new Exception("Unsupported quality");
+            }
+        }
     }
 }

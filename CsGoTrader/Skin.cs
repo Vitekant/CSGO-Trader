@@ -27,21 +27,82 @@ namespace CsGoTrader
             this.minFloatValue = minFloatValue;
             this.maxFloatValue = maxFloatValue;
             this.collectionGrade = collectionGrade;
+
+            skinPrices = new Dictionary<Quality, Prices>();
+
+            //initalizePrices();
         }
 
-        public Skin(string steamName)
+        public void initalizePrices()
         {
             skinPrices = new Dictionary<Quality, Prices>();
 
             // this will fetch prices from market
-            foreach(Quality quality in Enum.GetValues(typeof(Quality))){
-                skinPrices.Add(quality, new Prices(SteamMarket.getPrices(steamName, quality)));
+            foreach (Quality quality in Enum.GetValues(typeof(Quality)))
+            {
+                skinPrices.Add(quality, new Prices(SteamMarket.getPrices(name, quality)));
             }
+        }
+
+        public Skin(string name)
+        {
+            this.name = name;
+            //initalizePrices();
         }
 
         internal double averagePrice(Quality quality, int offersNumber)
         {
+            skinPrices.Add(quality, new Prices(SteamMarket.getPrices(name, quality)));
             return skinPrices[quality].averagePrice(offersNumber);
+        }
+
+        public double getAverageFloatValue(Quality quality)
+        {
+            double min;
+            double max;
+
+            switch (quality)
+            {
+                case Quality.BattleScared:
+                    min = 0.45;
+                    max = 1;
+                    break;
+                case Quality.WellWorn:
+                    min = 0.37;
+                    max = 0.45;
+                    break;
+                case Quality.FieldTested:
+                    min = 0.15;
+                    max = 0.37;
+                    break;
+                case Quality.MinimalWear:
+                    min = 0.07;
+                    max = 0.15;
+                    break;
+                case Quality.FactoryNew:
+                    min = 0;
+                    max = 0.07;
+                    break;
+                default:
+                    throw new Exception("Unsupported quality");
+            }
+
+            if(minFloatValue > max)
+            {
+                return 1000;
+            }
+
+            if(maxFloatValue < min)
+            {
+                return 1000;
+            }
+
+            return (Math.Max(min, minFloatValue) + Math.Min(max, maxFloatValue)) / 2;
+        }
+
+        public double getFloatValueRange()
+        {
+            return maxFloatValue - minFloatValue;
         }
     }
 }

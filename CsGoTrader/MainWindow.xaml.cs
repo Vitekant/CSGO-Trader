@@ -192,5 +192,10 @@ namespace CsGoTrader
                 gradeComboBox.Items.Add(new ComboBoxItem() { Content = quality.ToString() });
             }
         }
+
+        private void CalculateButton_Click(object sender, RoutedEventArgs e)
+        {
+            OptimizationEngine.checkCollection(collections.Values.First());
+        }
     }
 }

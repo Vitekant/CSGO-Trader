@@ -50,7 +50,7 @@ namespace CsGoTrader
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                return null;
+                return prices;
             }
 
             return prices;

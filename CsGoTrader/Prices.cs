@@ -17,14 +17,19 @@ namespace CsGoTrader
 
         public double averagePrice(int numberToCount)
         {
+            if(lowestPrices.Count == 0)
+            {
+                return 1000;
+            }
+
             var iterator = lowestPrices.GetEnumerator();
             double priceSum = 0;
-            for(int i=0; i>numberToCount; i++)
+            for(int i=0; i<numberToCount; i++)
             {
-                if(iterator.Current != null)
+                iterator.MoveNext();
+                if (iterator.Current != null)
                 {
-                    priceSum += iterator.Current;
-                    iterator.MoveNext();
+                    priceSum += iterator.Current;                 
                 }
                 else{
                     numberToCount = i;

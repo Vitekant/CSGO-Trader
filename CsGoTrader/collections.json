@@ -4,97 +4,97 @@
       {
         "name": "AK-47 | Aquamarine Revenge",
         "minFloatValue": 0.0,
-        "maxFloatValue": 100.0,
+        "maxFloatValue": 1.0,
         "collectionGrade": "Covert"
       },
       {
         "name": "AWP | Hyper Beast",
         "minFloatValue": 0.0,
-        "maxFloatValue": 100.0,
+        "maxFloatValue": 1.0,
         "collectionGrade": "Covert"
       },
       {
         "name": "SG 553 | Cyrex",
         "minFloatValue": 0.0,
-        "maxFloatValue": 100.0,
+        "maxFloatValue": 1.0,
         "collectionGrade": "Classified"
       },
       {
         "name": "MP7 | Nemesis",
         "minFloatValue": 0.0,
-        "maxFloatValue": 32.0,
+        "maxFloatValue": 0.32,
         "collectionGrade": "Classified"
       },
       {
         "name": "CZ75-Auto | Yellow Jacket",
         "minFloatValue": 0.0,
-        "maxFloatValue": 100.0,
+        "maxFloatValue": 1.0,
         "collectionGrade": "Classified"
       },
       {
         "name": "P2000 | Handgun",
         "minFloatValue": 0.0,
-        "maxFloatValue": 100.0,
+        "maxFloatValue": 1.0,
         "collectionGrade": "Restricted"
       },
       {
         "name": "Negev | Loudmouth",
-        "minFloatValue": 14.0,
-        "maxFloatValue": 65.0,
+        "minFloatValue": 0.14,
+        "maxFloatValue": 0.65,
         "collectionGrade": "Restricted"
       },
       {
         "name": "MP9 | Ruby Poison Dart",
         "minFloatValue": 0.0,
-        "maxFloatValue": 50.0,
+        "maxFloatValue": 0.50,
         "collectionGrade": "Restricted"
       },
       {
         "name": "M4A4 | Evil Daimyo",
         "minFloatValue": 0.0,
-        "maxFloatValue": 52.0,
+        "maxFloatValue": 0.52,
         "collectionGrade": "Restricted"
       },
       {
         "name": "FAMAS | Neural Net",
         "minFloatValue": 0.0,
-        "maxFloatValue": 60.0,
+        "maxFloatValue": 0.60,
         "collectionGrade": "Restricted"
       },
       {
         "name": "USP-S | Torque",
         "minFloatValue": 0.0,
-        "maxFloatValue": 46.0,
+        "maxFloatValue": 0.46,
         "collectionGrade": "MilSpec"
       },
       {
         "name": "UMP-45 | Riot",
         "minFloatValue": 0.0,
-        "maxFloatValue": 70.0,
+        "maxFloatValue": 0.70,
         "collectionGrade": "MilSpec"
       },
       {
         "name": "P90 | Elite Build",
         "minFloatValue": 0.0,
-        "maxFloatValue": 100.0,
+        "maxFloatValue": 1.0,
         "collectionGrade": "MilSpec"
       },
       {
         "name": "Nova | Ranger",
         "minFloatValue": 0.0,
-        "maxFloatValue": 100.0,
+        "maxFloatValue": 1.0,
         "collectionGrade": "MilSpec"
       },
       {
         "name": "Glock-18 | Bunsen Burner",
         "minFloatValue": 0.0,
-        "maxFloatValue": 80.0,
+        "maxFloatValue": 0.80,
         "collectionGrade": "MilSpec"
       },
       {
         "name": "Galil AR | Rocket Pop",
         "minFloatValue": 0.0,
-        "maxFloatValue": 100.0,
+        "maxFloatValue": 1.0,
         "collectionGrade": "MilSpec"
       }
     ],
