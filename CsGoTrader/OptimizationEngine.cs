@@ -7,6 +7,7 @@ using Microsoft.SolverFoundation.Common;
 using Microsoft.SolverFoundation.Solvers;
 using Microsoft.SolverFoundation.Services;
 using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace CsGoTrader
 {
@@ -228,7 +229,7 @@ namespace CsGoTrader
             {
                 foreach (Quality quality in Enum.GetValues(typeof(Quality)))
                 {
-                    complexConstraintsBase.Add(getVariableName(component, quality) + " * " + component.getAverageFloatValue(quality));
+                    complexConstraintsBase.Add(getVariableName(component, quality) + " * " + component.getAverageFloatValue(quality).ToString(CultureInfo.InvariantCulture);
                 }
             }
 
