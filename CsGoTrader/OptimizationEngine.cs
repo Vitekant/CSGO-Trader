@@ -229,7 +229,7 @@ namespace CsGoTrader
             {
                 foreach (Quality quality in Enum.GetValues(typeof(Quality)))
                 {
-                    complexConstraintsBase.Add(getVariableName(component, quality) + " * " + component.getAverageFloatValue(quality).ToString(CultureInfo.InvariantCulture);
+                    complexConstraintsBase.Add(getVariableName(component, quality) + " * " + component.getAverageFloatValue(quality).ToString(CultureInfo.InvariantCulture));
                 }
             }
 
