@@ -143,9 +143,9 @@ namespace CsGoTrader
                         constraintTemplate,
                         getVariableName(target.Item2, target.Item3),
                         string.Join(" + ",complexConstraintsBase),
-                        target.Item2.getFloatValueRange(),
-                        target.Item2.minFloatValue,
-                        EnumUtil.getQualityBorder(target.Item3)));
+                        target.Item2.getFloatValueRange().ToString(CultureInfo.InvariantCulture),
+                        target.Item2.minFloatValue.ToString(CultureInfo.InvariantCulture),
+                        EnumUtil.getQualityBorder(target.Item3).ToString(CultureInfo.InvariantCulture)));
             }
 
             i = 0;
@@ -204,7 +204,7 @@ namespace CsGoTrader
             List<string> expenses = new List<string>();
             foreach (var decision in decisions)
             {
-                expenses.Add(getVariableName(decision.Item2, decision.Item3) + " * " + decision.Item2.averagePrice(decision.Item3, 10));
+                expenses.Add(getVariableName(decision.Item2, decision.Item3) + " * " + decision.Item2.averagePrice(decision.Item3, 10).ToString(CultureInfo.InvariantCulture));
             }
 
             return string.Join(" + ", expenses);
@@ -215,7 +215,7 @@ namespace CsGoTrader
             List<string> expenses = new List<string>();
             foreach(var target in targets.Where(t => t.Item2.averagePrice(t.Item3, 1) < 1000))
             {
-                expenses.Add(getVariableName(target.Item2, target.Item3) + " * " + target.Item2.averagePrice(target.Item3, 1));
+                expenses.Add(getVariableName(target.Item2, target.Item3) + " * " + target.Item2.averagePrice(target.Item3, 1).ToString(CultureInfo.InvariantCulture));
             }
 
             return string.Join(" + ", expenses);
