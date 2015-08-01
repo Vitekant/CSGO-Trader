@@ -17,12 +17,26 @@ namespace CsGoTrader
             //Sample1();
         }
 
-        public static TradeUpContract checkCollection(Collection collection)
+        public static List<TradeUpContract> checkCollection(Collection collection)
         {
-            return findBestContract(
-                collection.jsonSkins.Where(s => s.collectionGrade == CollectionGrade.Covert).ToList(),
-                collection.jsonSkins.Where(s => s.collectionGrade == CollectionGrade.Classified).ToList());
-            //return null;
+            List<TradeUpContract> contracts = new List<TradeUpContract>();
+            foreach (CollectionGrade grade in Enum.GetValues(typeof(CollectionGrade)))
+            {
+                if((int)grade == 1)
+                {
+                    continue;
+                }
+
+                var higherTier = collection.jsonSkins.Where(s => s.collectionGrade == grade).ToList();
+                var lowerTier = collection.jsonSkins.Where(s => s.collectionGrade == (grade - 1)).ToList();
+
+                if(higherTier.Count != 0 && lowerTier.Count != 0)
+                {
+                    contracts.Add(findBestContract(higherTier, lowerTier));
+                }
+            }
+
+            return contracts;
         }
 
         static void Sample1()
@@ -160,7 +174,7 @@ namespace CsGoTrader
             {
                 if(decision.Item1.ToDouble() > 0)
                 {
-                    contract.tradeUpList.Add(new Tuple<Skin, Quality, int>(decision.Item2, decision.Item3, (int)Math.Round(decision.Item1.ToDouble()));
+                    contract.tradeUpList.Add(new Tuple<Skin, Quality, int>(decision.Item2, decision.Item3, (int)Math.Round(decision.Item1.ToDouble())));
                 }
             }
 
@@ -177,7 +191,7 @@ namespace CsGoTrader
 
         private static string generateGoal(List<Tuple<Decision, Skin, Quality>> targets, List<Tuple<Decision, Skin, Quality>> decisions)
         {
-            string goalTemplate = "(({0}) - ({1}) * {2}) * 0.85";
+            string goalTemplate = "(({0}) * 0.85 - ({1}) * {2})";
             string gain = generateGain(targets);
             string expenses = generateCosts(decisions);
 
@@ -198,7 +212,7 @@ namespace CsGoTrader
         private static string generateGain(List<Tuple<Decision, Skin, Quality>> targets)
         {
             List<string> expenses = new List<string>();
-            foreach(var target in targets)
+            foreach(var target in targets.Where(t => t.Item2.averagePrice(t.Item3, 1) < 1000))
             {
                 expenses.Add(getVariableName(target.Item2, target.Item3) + " * " + target.Item2.averagePrice(target.Item3, 1));
             }
@@ -224,6 +238,8 @@ namespace CsGoTrader
         public static string getVariableName(Skin skin, Quality quality)
         {
             var name = String.Copy(skin.name);
+            Regex rgx = new Regex("[^a-zA-Z0-9]");
+            name = rgx.Replace(name, "");
             var charsToRemove = new string[] { "|", "-", " ", "}", ",", ".", ";", "'" };
             foreach (var c in charsToRemove)
             {

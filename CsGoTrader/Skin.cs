@@ -8,7 +8,7 @@ namespace CsGoTrader
     [JsonObject(MemberSerialization.OptIn)]
     public class Skin
     {
-        public Dictionary<Quality, Prices> skinPrices;
+        private Dictionary<Quality, Prices> skinPrices;
 
         [JsonProperty]
         public string name;
@@ -27,8 +27,8 @@ namespace CsGoTrader
             this.minFloatValue = minFloatValue;
             this.maxFloatValue = maxFloatValue;
             this.collectionGrade = collectionGrade;
-
             skinPrices = new Dictionary<Quality, Prices>();
+
 
             //initalizePrices();
         }
@@ -44,16 +44,19 @@ namespace CsGoTrader
             }
         }
 
-        public Skin(string name)
-        {
-            this.name = name;
-            //initalizePrices();
-        }
-
         internal double averagePrice(Quality quality, int offersNumber)
         {
-            skinPrices.Add(quality, new Prices(SteamMarket.getPrices(name, quality)));
+            if(!skinPrices.ContainsKey(quality) || skinPrices[quality] == null)
+            {
+                refreshPrices(quality, offersNumber);
+            }
+
             return skinPrices[quality].averagePrice(offersNumber);
+        }
+
+        private void refreshPrices(Quality quality, int offersNumber)
+        {
+            skinPrices.Add(quality, new Prices(SteamMarket.getPrices(name, quality)));
         }
 
         public double getAverageFloatValue(Quality quality)

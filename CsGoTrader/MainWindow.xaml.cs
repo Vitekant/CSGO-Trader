@@ -42,12 +42,6 @@ namespace CsGoTrader
             };
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            Skin skin = new Skin("AK-47 | Aquamarine Revenge");
-            //SteamMarket.getPrices();
-        }
-
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -204,7 +198,9 @@ namespace CsGoTrader
 
         private void CalculateButton_Click(object sender, RoutedEventArgs e)
         {
-            OptimizationEngine.checkCollection(collections.Values.First());
+            var collection = collections[(string)((ListBoxItem)CollectionsBox.SelectedItem).Content];
+
+            OptimizationEngine.checkCollection(collection);
         }
 
         private void displayCollection(Collection collection)
@@ -258,6 +254,11 @@ namespace CsGoTrader
         private void CollectionsBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ListBox box = (ListBox)sender;
+            if((ListBoxItem)box.SelectedItem == null)
+            {
+                return;
+            }
+
             var collection = collections[(string)((ListBoxItem)box.SelectedItem).Content];
 
             displayCollection(collection);

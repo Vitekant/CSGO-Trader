@@ -13,5 +13,11 @@ namespace CsGoTrader
         public List<Tuple<Skin, Quality>> resultsList;
 
         public double potentialGain;
+
+        public TradeUpContract()
+        {
+            tradeUpList = new List<Tuple<Skin, Quality, int>>();
+            resultsList = new List<Tuple<Skin, Quality>>();
+        }
     }
 }

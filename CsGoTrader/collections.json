@@ -194,5 +194,94 @@
       }
     ],
     "name": "Chroma 2 Case"
+  },
+  {
+    "jsonSkins": [
+      {
+        "name": "Galil AR | Chatterbox",
+        "minFloatValue": 0.35,
+        "maxFloatValue": 0.85,
+        "collectionGrade": "Covert"
+      },
+      {
+        "name": "AWP | Man-o'-war",
+        "minFloatValue": 0.1,
+        "maxFloatValue": 0.2,
+        "collectionGrade": "Covert"
+      },
+      {
+        "name": "P250 | Muertos",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.6,
+        "collectionGrade": "Classified"
+      },
+      {
+        "name": "M4A4 | 龍王 (Dragon King)",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.75,
+        "collectionGrade": "Classified"
+      },
+      {
+        "name": "AK-47 | Cartel",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.75,
+        "collectionGrade": "Classified"
+      },
+      {
+        "name": "MAC-10 | Malachite",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.5,
+        "collectionGrade": "Restricted"
+      },
+      {
+        "name": "Sawed-Off | Serenity",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.5,
+        "collectionGrade": "Restricted"
+      },
+      {
+        "name": "Dual Berettas | Urban Shock",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.47,
+        "collectionGrade": "Restricted"
+      },
+      {
+        "name": "Desert Eagle | Naga",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 1.0,
+        "collectionGrade": "Restricted"
+      },
+      {
+        "name": "Glock-18 | Catacombs",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.5,
+        "collectionGrade": "MilSpec"
+      },
+      {
+        "name": "M249 | System Lock",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.8,
+        "collectionGrade": "MilSpec"
+      },
+      {
+        "name": "XM1014 | Quicksilver",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.5,
+        "collectionGrade": "MilSpec"
+      },
+      {
+        "name": "MP9 | Deadly Poison",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 1.0,
+        "collectionGrade": "MilSpec"
+      },
+      {
+        "name": "SCAR-20 | Grotto",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.5,
+        "collectionGrade": "MilSpec"
+      }
+    ],
+    "name": "Chroma Case"
   }
 ]
