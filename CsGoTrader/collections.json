@@ -46,7 +46,7 @@
       {
         "name": "MP9 | Ruby Poison Dart",
         "minFloatValue": 0.0,
-        "maxFloatValue": 0.50,
+        "maxFloatValue": 0.5,
         "collectionGrade": "Restricted"
       },
       {
@@ -58,7 +58,7 @@
       {
         "name": "FAMAS | Neural Net",
         "minFloatValue": 0.0,
-        "maxFloatValue": 0.60,
+        "maxFloatValue": 0.6,
         "collectionGrade": "Restricted"
       },
       {
@@ -70,7 +70,7 @@
       {
         "name": "UMP-45 | Riot",
         "minFloatValue": 0.0,
-        "maxFloatValue": 0.70,
+        "maxFloatValue": 0.7,
         "collectionGrade": "MilSpec"
       },
       {
@@ -88,7 +88,7 @@
       {
         "name": "Glock-18 | Bunsen Burner",
         "minFloatValue": 0.0,
-        "maxFloatValue": 0.80,
+        "maxFloatValue": 0.8,
         "collectionGrade": "MilSpec"
       },
       {
@@ -99,5 +99,100 @@
       }
     ],
     "name": "Falchion Case"
+  },
+  {
+    "jsonSkins": [
+      {
+        "name": "MAC-10 | Neon Rider",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.45,
+        "collectionGrade": "Covert"
+      },
+      {
+        "name": "M4A1-S | Hyper Beast",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 1.0,
+        "collectionGrade": "Covert"
+      },
+      {
+        "name": "FAMAS | Djinn",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 1.0,
+        "collectionGrade": "Classified"
+      },
+      {
+        "name": "Galil AR | Eco",
+        "minFloatValue": 0.1,
+        "maxFloatValue": 0.85,
+        "collectionGrade": "Classified"
+      },
+      {
+        "name": "Five-SeveN | Monkey Business",
+        "minFloatValue": 0.1,
+        "maxFloatValue": 0.9,
+        "collectionGrade": "Classified"
+      },
+      {
+        "name": "UMP-45 | Grand Prix",
+        "minFloatValue": 0.25,
+        "maxFloatValue": 0.35,
+        "collectionGrade": "Restricted"
+      },
+      {
+        "name": "CZ75-Auto | Pole Position",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.7,
+        "collectionGrade": "Restricted"
+      },
+      {
+        "name": "MAG-7 | Heat",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 1.0,
+        "collectionGrade": "Restricted"
+      },
+      {
+        "name": "AWP | Worm God",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.45,
+        "collectionGrade": "Restricted"
+      },
+      {
+        "name": "Sawed-Off | Origami",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.55,
+        "collectionGrade": "MilSpec"
+      },
+      {
+        "name": "Negev | Man-o'-war",
+        "minFloatValue": 0.1,
+        "maxFloatValue": 0.2,
+        "collectionGrade": "MilSpec"
+      },
+      {
+        "name": "P250 | Valence",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.8,
+        "collectionGrade": "MilSpec"
+      },
+      {
+        "name": "Desert Eagle | Bronze Deco",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.46,
+        "collectionGrade": "MilSpec"
+      },
+      {
+        "name": "MP7 | Armor Core",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.5,
+        "collectionGrade": "MilSpec"
+      },
+      {
+        "name": "AK-47 | Elite Build",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 1.0,
+        "collectionGrade": "MilSpec"
+      }
+    ],
+    "name": "Chroma 2 Case"
   }
 ]

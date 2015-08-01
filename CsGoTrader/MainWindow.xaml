@@ -11,12 +11,12 @@
         <Label x:Name="label_Copy1" Content="Skin Name" HorizontalAlignment="Left" Height="28" Margin="27,71,0,0" VerticalAlignment="Top" Width="86"/>
         <Label x:Name="label" Content="MAX" HorizontalAlignment="Left" Height="28" Margin="323,73,0,0" VerticalAlignment="Top" Width="35"/>
         <Label x:Name="label_Copy" Content="MIN" HorizontalAlignment="Left" Height="28" Margin="283,73,0,0" VerticalAlignment="Top" Width="35"/>
-        <ListBox x:Name="CollectionsBox" HorizontalAlignment="Left" Height="179" Margin="517,100,0,0" VerticalAlignment="Top" Width="208"/>
-        <Button x:Name="AddRowButton" Content="+" HorizontalAlignment="Left" Height="18" Margin="458,77,0,0" VerticalAlignment="Top" Width="18" Click="AddRowButtonClick"/>
+        <ListBox x:Name="CollectionsBox" HorizontalAlignment="Left" Height="179" Margin="517,100,0,0" VerticalAlignment="Top" Width="208" SelectionChanged="CollectionsBox_SelectionChanged"/>
+        <Button x:Name="AddRowButton" Content="+" HorizontalAlignment="Left" Height="18" Margin="432,79,0,0" VerticalAlignment="Top" Width="18" Click="AddRowButtonClick"/>
         <TextBox x:Name="CollectionName" HorizontalAlignment="Left" Height="19" Margin="125,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221" Text="Falchion"/>
         <Label x:Name="label1" Content="Collection name:" HorizontalAlignment="Left" Height="24" Margin="27,45,0,0" VerticalAlignment="Top" Width="105"/>
         <Button x:Name="SaveCollectionButton" Content="Save Collection" HorizontalAlignment="Left" Height="24" Margin="351,46,0,0" VerticalAlignment="Top" Width="125" Click="SaveCollectionButton_Click"/>
-        <Label x:Name="SkinGradeLabel" Content="Grade" HorizontalAlignment="Left" Height="28" Margin="363,73,0,0" VerticalAlignment="Top" Width="86" RenderTransformOrigin="4.058,0.381"/>
+        <Label x:Name="SkinGradeLabel" Content="Grade" HorizontalAlignment="Left" Height="28" Margin="363,73,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="4.058,0.381"/>
         <Label x:Name="CollectionsLabel" Content="Collections:" HorizontalAlignment="Left" Height="24" Margin="517,71,0,0" VerticalAlignment="Top" Width="140"/>
         <Button x:Name="SaveButton" Content="Save to File" HorizontalAlignment="Left" Height="20" Margin="639,24,0,0" VerticalAlignment="Top" Width="86" Click="SaveButton_Click"/>
         <Button x:Name="LoadButton" Content="Load from File" HorizontalAlignment="Left" Height="20" Margin="639,49,0,0" VerticalAlignment="Top" Width="86" Click="LoadButton_Click"/>
@@ -29,7 +29,6 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="35"/>
-                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <TextBox Grid.Column="0" Grid.Row="0" x:Name="SkinName1" HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" Text="AK-47 | Aquamarine Revenge"/>
             <TextBox Grid.Column="1" Grid.Row="0" x:Name="MinFloatValue1" HorizontalAlignment="Left" Height="20" Margin="5,10,5,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="30" />
@@ -43,5 +42,6 @@
                 <ComboBoxItem Content="Covert" IsSelected="True"/>
             </ComboBox>
         </Grid>
+        <Button x:Name="AddRowButton_Copy" Content="-" HorizontalAlignment="Left" Height="18" Margin="458,79,0,0" VerticalAlignment="Top" Width="18" Click="RemoveRowButtonClick" RenderTransformOrigin="2.296,0.481"/>
     </Grid>
 </Window>

@@ -154,7 +154,25 @@ namespace CsGoTrader
             Console.Write("{0}", report);
             context.ClearModel();
 
-            return null;
+            var contract = new TradeUpContract();
+            contract.potentialGain = model.Goals.First().ToDouble();
+            foreach(var decision in decisions)
+            {
+                if(decision.Item1.ToDouble() > 0)
+                {
+                    contract.tradeUpList.Add(new Tuple<Skin, Quality, int>(decision.Item2, decision.Item3, (int)Math.Round(decision.Item1.ToDouble()));
+                }
+            }
+
+            foreach (var target in targets)
+            {
+                if (target.Item1.ToDouble() > 0)
+                {
+                    contract.resultsList.Add(new Tuple<Skin, Quality>(target.Item2, target.Item3));
+                }
+            }
+
+            return contract;
         }
 
         private static string generateGoal(List<Tuple<Decision, Skin, Quality>> targets, List<Tuple<Decision, Skin, Quality>> decisions)
@@ -262,6 +280,7 @@ namespace CsGoTrader
             {
                 skin
             };
+
             return getBasicConstraints(list, limit);
         }
     }

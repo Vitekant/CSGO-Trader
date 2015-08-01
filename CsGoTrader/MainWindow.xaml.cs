@@ -124,9 +124,15 @@ namespace CsGoTrader
 
         private void AddRowButtonClick(object sender, RoutedEventArgs e)
         {
+            AddRow();
+        }
+
+        private void AddRow()
+        {
             var rowNumber = SkinsGrid.RowDefinitions.Count;
 
-            if(rowNumber > 16){
+            if (rowNumber > 16)
+            {
                 return;
             }
 
@@ -147,6 +153,7 @@ namespace CsGoTrader
             minFloatValueBox.Margin = new Thickness(5, 5, 5, 0);
             minFloatValueBox.VerticalAlignment = VerticalAlignment.Top;
             minFloatValueBox.HorizontalAlignment = HorizontalAlignment.Left;
+            minFloatValueBox.Text = "0";
 
             var maxFloatValueBox = new TextBox();
             maxFloatValueBox.Height = 20;
@@ -154,6 +161,7 @@ namespace CsGoTrader
             maxFloatValueBox.Margin = new Thickness(5, 5, 5, 0);
             maxFloatValueBox.VerticalAlignment = VerticalAlignment.Top;
             maxFloatValueBox.HorizontalAlignment = HorizontalAlignment.Left;
+            maxFloatValueBox.Text = "1.0";
 
             var gradeComboBox = new ComboBox();
             gradeComboBox.Height = 20;
@@ -162,6 +170,7 @@ namespace CsGoTrader
             gradeComboBox.VerticalAlignment = VerticalAlignment.Top;
             gradeComboBox.HorizontalAlignment = HorizontalAlignment.Left;
             fillGadeBox(gradeComboBox);
+            gradeComboBox.SelectedIndex = 1;
 
             SkinsGrid.Children.Add(nameBox);
             Grid.SetRow(nameBox, rowNumber);
@@ -196,6 +205,62 @@ namespace CsGoTrader
         private void CalculateButton_Click(object sender, RoutedEventArgs e)
         {
             OptimizationEngine.checkCollection(collections.Values.First());
+        }
+
+        private void displayCollection(Collection collection)
+        {
+            while (collection.jsonSkins.Count < skinsControlsList.Count)
+            {
+                removeRow();
+            }
+
+            while (collection.jsonSkins.Count > skinsControlsList.Count)
+            {
+                AddRow();
+            }
+
+            CollectionName.Text = collection.name;
+
+            int k = 0;
+            foreach(var row in collection.jsonSkins)
+            {
+                skinsControlsList.ElementAt(k).Item1.Text = row.name;
+                skinsControlsList.ElementAt(k).Item2.Text = row.minFloatValue.ToString();
+                skinsControlsList.ElementAt(k).Item3.Text = row.maxFloatValue.ToString();
+                skinsControlsList.ElementAt(k).Item4.SelectedIndex = (int)row.collectionGrade - 1;
+                k++;
+            }
+        }
+
+        private void removeRow()
+        {
+            if(SkinsGrid.RowDefinitions.Count == 1)
+            {
+                return;
+            }
+
+            var controlsToRemove = skinsControlsList.Last();
+            var lastRow = SkinsGrid.RowDefinitions.Last();
+            SkinsGrid.Children.Remove(controlsToRemove.Item1);
+            SkinsGrid.Children.Remove(controlsToRemove.Item2);
+            SkinsGrid.Children.Remove(controlsToRemove.Item3);
+            SkinsGrid.Children.Remove(controlsToRemove.Item4);
+
+            SkinsGrid.RowDefinitions.Remove(lastRow);
+            skinsControlsList.Remove(controlsToRemove);
+        }
+
+        private void RemoveRowButtonClick(object sender, RoutedEventArgs e)
+        {
+            removeRow();
+        }
+
+        private void CollectionsBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ListBox box = (ListBox)sender;
+            var collection = collections[(string)((ListBoxItem)box.SelectedItem).Content];
+
+            displayCollection(collection);
         }
     }
 }
