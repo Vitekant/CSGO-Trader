@@ -50,7 +50,7 @@ namespace CsGoTrader
         private void SaveCollectionButton_Click(object sender, RoutedEventArgs e)
         {
             var collection = Collection.readCollection(CollectionName.Text, skinsControlsList);
-            if (collections.ContainsKey(collection.name))
+            if (!collections.ContainsKey(collection.name))
             {
                 collections.Add(collection.name, collection);
             }

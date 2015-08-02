@@ -283,5 +283,94 @@
       }
     ],
     "name": "Chroma Case"
+  },
+  {
+      "jsonSkins": [
+      {
+        "name": "AWP | Medusa",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 1.0,
+        "collectionGrade": "Covert"
+      },
+      {
+        "name": "M4A4 | Poseidon",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.33,
+        "collectionGrade": "Classified"
+      },
+      {
+        "name": "G3SG1 | Chronos",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.4,
+        "collectionGrade": "Restricted"
+      },
+      {
+        "name": "M4A1-S | Icarus Fell",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.1,
+        "collectionGrade": "Restricted"
+      },
+      {
+        "name": "UMP-45 | Minotaur's Labyrinth",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.39,
+        "collectionGrade": "MilSpec"
+      },
+      {
+        "name": "MP9 | Pandora's Box",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.3,
+        "collectionGrade": "MilSpec"
+      },
+      {
+        "name": "Tec-9 | Hades",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 1.0,
+        "collectionGrade": "IndustrialGgrade"
+      },
+      {
+        "name": "P2000 | Pathfinder",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.35,
+        "collectionGrade": "IndustrialGgrade"
+      },
+      {
+        "name": "AWP | Sun in Leo",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.5,
+        "collectionGrade": "IndustrialGgrade"
+      },
+      {
+        "name": "M249 | Shipping Forecast",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.5,
+        "collectionGrade": "IndustrialGgrade"
+      },
+      {
+        "name": "MP7 | Asterion",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.55,
+        "collectionGrade": "ConsumerGrade"
+      },
+      {
+        "name": "AUG | Daedalus",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.55,
+        "collectionGrade": "ConsumerGrade"
+      },
+      {
+        "name": "Dual Berettas | Moon in Libra",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.5,
+        "collectionGrade": "ConsumerGrade"
+      },
+      {
+        "name": "Nova | Moon in Libra",
+        "minFloatValue": 0.0,
+        "maxFloatValue": 0.5,
+        "collectionGrade": "ConsumerGrade"
+      }
+    ],
+    "name": "The Gods and Monsters Collection"
   }
 ]
