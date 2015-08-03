@@ -170,7 +170,7 @@ namespace CsGoTrader
             context.ClearModel();
 
             var contract = new TradeUpContract();
-            contract.potentialGain = model.Goals.First().ToDouble();
+
             foreach(var decision in decisions)
             {
                 if(decision.Item1.ToDouble() > 0)
@@ -186,6 +186,8 @@ namespace CsGoTrader
                     contract.resultsList.Add(new Tuple<Skin, Quality>(target.Item2, target.Item3));
                 }
             }
+
+            contract.potentialGain = model.Goals.First().ToDouble() / contract.resultsList.Count;
 
             return contract;
         }
